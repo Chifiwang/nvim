@@ -1,1 +1,1 @@
-require('lsp-zero')
+-- require('lsp-zero').extend_lspconfig()

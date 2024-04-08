@@ -1,6 +1,6 @@
 return {
     'williamboman/mason-lspconfig.nvim',
     config = function()
-        require 'plugins.lsp.mason.mason-conf.conf'
+        require 'plugins.lsp.manager.mason-conf.conf'
     end,
 }
