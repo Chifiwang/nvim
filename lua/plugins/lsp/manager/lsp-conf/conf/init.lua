@@ -42,7 +42,7 @@ lsp_zero.on_attach(function(client, bufnr)
 	end
 end)
 
--- lsp_config.intelephense.setup {}
+lsp_config.intelephense.setup({})
 local configure = function(n)
 	local conf = require(n)
 	conf.capabilities = capabilities
@@ -50,11 +50,9 @@ local configure = function(n)
 end
 
 -- [[ Init LSPs ]]
-if utils.executable("lua-language-server") then
-	lsp_config.lua_ls.setup(configure("plugins.lsp.lua_ls"))
-else
-	print("lua-language-server not found")
-end
-
+lsp_config.lua_ls.setup(configure("plugins.lsp.lua_ls"))
+lsp_config.pyright.setup(configure("plugins.lsp.pyright"))
+lsp_config.clangd.setup(configure("plugins.lsp.clangd"))
+lsp_config.rust_analyzer.setup(configure("plugins.lsp.rust_analyzer"))
 -- [[ Keymaps ]]
 -- vim.keymap.set('n', '<s-k>', vim.lsp.buf.hover, {})

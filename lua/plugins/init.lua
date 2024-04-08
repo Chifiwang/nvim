@@ -26,4 +26,6 @@ return {
     require 'plugins.lsp.cmp.nvim-cmp',
     require 'plugins.lsp.cmp.luasnip',
     require 'plugins.lsp.cmp.nvim-cmp-lsp',
+    -- DAP
+    require 'plugins.dap.manager.nvim-dap'
 }
