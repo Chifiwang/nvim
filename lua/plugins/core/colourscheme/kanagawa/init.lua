@@ -25,5 +25,9 @@ require('kanagawa').setup({
 
 vim.cmd [[set background=dark]]
 vim.cmd [[colorscheme kanagawa]]
-vim.cmd 'highlight TelescopeBorder guibg=none'
-vim.cmd 'highlight TelescopeTitle guibg=none'
+vim.cmd [[highlight TelescopeBorder guibg=none]]
+vim.cmd [[highlight TelescopeTitle guibg=none]]
+vim.cmd [[
+highlight NormalFloat guibg=none
+highlight FloatBorder guibg=none
+]]
