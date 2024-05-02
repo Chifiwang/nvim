@@ -54,8 +54,8 @@ opt.splitright = false
 opt.splitbelow = false
 
 -- Sets whitespace display chars
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.list = true
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions
 opt.inccommand = 'split'
@@ -72,6 +72,9 @@ vim.cmd [[highlight ColorColumn ctermbg=0 guibg='#1f212e']]
 opt.wrap = true
 opt.linebreak = true
 
+-- Allow for visual blocks to select true squares at end of lines
+key.set('n', 'q', '<c-v>', { noremap = true })
+opt.virtualedit = 'block'
 -- [[ Searching ]]
 -- Make searches case insensity
 -- Make case sensitive searches case-sensitive
@@ -84,12 +87,19 @@ key.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- [[ Auto Commands]]
 -- Make highlight on [y]ank work
-vim.api.nvim_create_autocmd('TextYankPost', {
+api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight when [y]anking text',
-    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+    group = api.nvim_create_augroup('highlight-yank', { clear = true }),
     callback = function()
         vim.highlight.on_yank()
   end,
+})
+
+api.nvim_create_autocmd('BufWritePre', {
+    group = api.nvim_create_augroup('format', {clear = true}),
+    -- buffer = bufnr,
+    pattern = { '*' },
+    command = [[%s/\s\+$//e]],
 })
 
 -- [[ Custom Keymaps ]]

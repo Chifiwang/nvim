@@ -11,6 +11,7 @@ return {
     require 'plugins.core.comments',
     require 'plugins.core.lualine',
     require 'plugins.core.telescope-ui-select',
+    -- require 'plugins.core.hexokinase',
     -- require 'plugins.core.neodev', -- adds nvim support to lsp
     -- Git
     require 'plugins.git.gitsigns',
@@ -27,5 +28,7 @@ return {
     require 'plugins.lsp.cmp.luasnip',
     require 'plugins.lsp.cmp.nvim-cmp-lsp',
     -- DAP
-    require 'plugins.dap.manager.nvim-dap'
+    require 'plugins.dap.manager.nvim-dap',
+    -- LATEX
+    -- require 'plugins.latex.vimtex',
 }

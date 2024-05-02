@@ -23,6 +23,7 @@ require('kanagawa').setup({
     },
 })
 
+-- vim.o.termguicolours = true
 vim.cmd [[set background=dark]]
 vim.cmd [[colorscheme kanagawa]]
 vim.cmd [[highlight TelescopeBorder guibg=none]]
@@ -31,3 +32,4 @@ vim.cmd [[
 highlight NormalFloat guibg=none
 highlight FloatBorder guibg=none
 ]]
+vim.cmd [[highlight Comment gui=none]]

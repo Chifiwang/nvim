@@ -1,5 +1,7 @@
 return {
     'mfussenegger/nvim-dap',
+    -- lazy = true,
+    -- event = 'BufEnter *.*',
     dependencies = {
         {
             'rcarriga/nvim-dap-ui',
