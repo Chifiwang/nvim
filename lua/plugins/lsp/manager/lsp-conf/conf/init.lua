@@ -11,6 +11,7 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 	vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", opts)
 	vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
+	vim.keymap.set("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
 
 	-- if client.server_capabilities.documentFormattingProvider then
 	--     vim.keymap.set("n", "<space>f", vim.lsp.buf.format, { desc = "format code" })
@@ -54,5 +55,16 @@ lsp_config.lua_ls.setup(configure("plugins.lsp.lua_ls"))
 lsp_config.pyright.setup(configure("plugins.lsp.pyright"))
 lsp_config.clangd.setup(configure("plugins.lsp.clangd"))
 lsp_config.rust_analyzer.setup(configure("plugins.lsp.rust_analyzer"))
+-- lsp_config.jdtls.setup({
+-- 	handlers = {
+-- 		["language/status"] = function(_, result)
+-- 			vim.print("***")
+-- 		end,
+-- 		["$/progress"] = function(_, result, ctx)
+-- 			vim.print("---")
+-- 		end,
+-- 	},
+-- })
+-- lsp_zero.preset({}).skip_server_setup({'jdtls'})
 -- [[ Keymaps ]]
 -- vim.keymap.set('n', '<s-k>', vim.lsp.buf.hover, {})

@@ -11,7 +11,7 @@ return {
     require 'plugins.core.comments',
     require 'plugins.core.lualine',
     require 'plugins.core.telescope-ui-select',
-    -- require 'plugins.core.hexokinase',
+    require 'plugins.core.hexokinase',
     -- require 'plugins.core.neodev', -- adds nvim support to lsp
     -- Git
     require 'plugins.git.gitsigns',
@@ -22,6 +22,8 @@ return {
     require 'plugins.lsp.manager.mason',
     require 'plugins.lsp.manager.installer',
     require 'plugins.lsp.manager.mason-conf',
+    -- Java Lsp
+    require 'plugins.lsp.java.jdtls',
     -- CMP
     require 'plugins.lsp.cmp.none',
     require 'plugins.lsp.cmp.nvim-cmp',
@@ -31,4 +33,8 @@ return {
     require 'plugins.dap.manager.nvim-dap',
     -- LATEX
     -- require 'plugins.latex.vimtex',
+    -- TMUX
+    require 'plugins.tmux.vim-tmux-nav',
+    -- Discord
+    require 'plugins.discord.presence'
 }
