@@ -70,6 +70,11 @@ local config = {
 	-- for a list of options
 	settings = {
 		java = {
+			project = {
+				referencedLibraries = {
+					home .. "/.local/share/nvim/java/lombok.jar",
+				},
+			},
 			format = {
 				settings = {
 					-- Use Google Java style guidelines for formatting
@@ -150,7 +155,8 @@ local config = {
 	cmd = {
 		-- home .. "/.asdf/installs/java/corretto-17.0.4.9.1/bin/java",
 		-- home .. './sdkman/candidates/java/22.0.1-oracle/bin/java',
-		vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls"),
+		-- vim.fn.expand("~/.local/share/nvim/mason/bin/jdtls"),
+		"java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -165,7 +171,7 @@ local config = {
 		-- If you use lombok, download the lombok jar and place it in ~/.local/share/eclipse
 		"-javaagent:"
 			.. home
-			.. "/.local/share/nvim/java/lombok.jar",
+			.. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
 
 		-- The jar file is located where jdtls was installed. This will need to be updated
 		-- to the location where you installed jdtls

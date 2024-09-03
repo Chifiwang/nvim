@@ -54,7 +54,7 @@ opt.splitbelow = false
 
 -- Sets whitespace display chars
 opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions
 opt.inccommand = "split"

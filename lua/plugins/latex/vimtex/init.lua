@@ -5,3 +5,4 @@ return {
         require 'plugins.latex.vimtex.conf'
     end
 }
+

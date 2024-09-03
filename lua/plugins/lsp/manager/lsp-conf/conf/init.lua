@@ -55,6 +55,7 @@ lsp_config.lua_ls.setup(configure("plugins.lsp.lua_ls"))
 lsp_config.pyright.setup(configure("plugins.lsp.pyright"))
 lsp_config.clangd.setup(configure("plugins.lsp.clangd"))
 lsp_config.rust_analyzer.setup(configure("plugins.lsp.rust_analyzer"))
+lsp_config.texlab.setup(configure("plugins.lsp.texlab"))
 -- lsp_config.jdtls.setup({
 -- 	handlers = {
 -- 		["language/status"] = function(_, result)
