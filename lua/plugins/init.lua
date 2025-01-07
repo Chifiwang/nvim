@@ -1,6 +1,6 @@
 return {
 	-- Core
-	require("pies"),
+	-- require("pies"),
 	require("plugins.core.colourscheme"),
 	require("plugins.core.treesitter"),
 	require("plugins.core.filemanager"),
