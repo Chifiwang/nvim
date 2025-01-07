@@ -1,5 +1,8 @@
 local util = require("lspconfig.util")
 
+-- separate .h files into c files
+vim.cmd [[autocmd BufNewFile, BufRead *.h setlocal filetype=c]]
+
 -- https://clangd.llvm.org/extensions.html#switch-between-sourceheader
 local function switch_source_header(bufnr)
   bufnr = util.validate_bufnr(bufnr)
@@ -40,7 +43,7 @@ local default_capabilities = {
 }
 
 return {
-  cmd = { "clangd", "--fallback-style=webkit" },
+  cmd = { "clangd", "--fallback-style=webkit --compile-commands-dir=.clangd --enable-config" },
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
   root_dir = function(fname)
       return util.root_pattern(unpack(root_files))(fname) or util.find_git_ancestor(fname)

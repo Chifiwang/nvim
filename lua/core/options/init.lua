@@ -68,7 +68,7 @@ opt.colorcolumn = "80"
 vim.cmd([[highlight ColorColumn ctermbg=0 guibg='#1f212e']])
 
 -- Wrap Words
-opt.wrap = true
+opt.wrap = false
 opt.linebreak = true
 
 -- Allow for visual blocks to select true squares at end of lines
@@ -113,6 +113,17 @@ api.nvim_create_autocmd("InsertLeave", {
 	group = api.nvim_create_augroup("numbering", { clear = false }),
 	pattern = { "*" },
 	command = [[:set relativenumber]]
+})
+
+-- separate .h files into c files
+api.nvim_create_autocmd("BufRead", {
+	pattern = {"*.h"},
+	command = [[:setlocal filetype=c]]
+})
+
+api.nvim_create_autocmd("BufNewFile", {
+	pattern = {"*.h"},
+	command = [[:setlocal filetype=c]]
 })
 
 -- [[ Custom Keymaps ]]
